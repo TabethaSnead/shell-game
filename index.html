@@ -1,39 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-    <!-- metadata -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <!-- title and favicon -->
+        <title>My Hiding Game</title>
+        <link rel="icon" type="image/x-icon" href="assets/alchemy-favicon.png" />
 
-    <!-- title and favicon -->
-    <title>Web App</title>
-    <link rel="icon" type="image/x-icon" href="assets/alchemy-favicon.png" />
+        <!-- js -->
+        <script type="module" src="app.js"></script>
 
-    <!-- js -->
-    <script type="module" src="app.js"></script>
+        <!-- fonts -->
+        <!-- see https://fonts.google.com/ -->
 
-    <!-- fonts -->
-    <!-- see https://fonts.google.com/ -->
+        <!-- css -->
+        <link rel="stylesheet" href="styles/reset.css" />
+        <link rel="stylesheet" href="styles/global.css" />
+        <!-- add link for page specific css -->
+    </head>
 
-    <!-- css -->
-    <link rel="stylesheet" href="styles/reset.css" />
-    <link rel="stylesheet" href="styles/global.css" />
-    <!-- add link for page specific css -->
+    <body>
+        <header>
+            <img class="logo" src="assets/html_css_js.png" alt="logo" />
+            <h1>My Hiding Game</h1>
+        </header>
 
-</head>
+        <main>
+            <section class="image-section">
+                <img src="./assets/hobbit.png" id="hobbit-img" alt="a hobbit home" />
 
-<body>
-    <header>
-        <img class="logo" src="assets/html_css_js.png" alt="logo">
-        <h1>Web App</h1>
-    </header>
+                <img src="./assets/mountian.png" id="mountian-img" alt="a sandstone mountian" />
 
-    <main>
+                <img src="./assets/trees.png" id="trees-img" alt="a wooded forest" />
+            </section>
+            <section class="button-section">
+                <button id="hobbit-button">You're hiding here!</button>
 
-    </main>
+                <button id="mountian-button">You're hiding here!</button>
 
-</body>
-
+                <button id="tree-button">You're hiding here!</button>
+            </section>
+            <section class="result-section">
+                <p>Games Won<span id="correct-span">0</span></p>
+                <p>Games Lost <span id="incorrect-span">0</span></p>
+                <p>Total Games Played <span id="total-span">0</span></p>
+            </section>
+        </main>
+    </body>
 </html>
