@@ -60,6 +60,8 @@ p {
     font-size: 8rem;
     content: '🐇';
     position: absolute;
+
+    pointer-events: none;
 }
 
 .hiding-spot {

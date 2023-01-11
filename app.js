@@ -2,11 +2,11 @@
 
 /* Get DOM Elements */
 const hobbitContainer = document.getElementById('hobbit-container');
-const mountianContainer = document.getElementById('mountian-container');
+const mountainContainer = document.getElementById('mountain-container');
 const treesContainer = document.getElementById('trees-container');
 
 const hobbitButton = document.getElementById('hobbit-button');
-const mountianButton = document.getElementById('mountian-button');
+const mountainButton = document.getElementById('mountain-button');
 const treesButton = document.getElementById('trees-button');
 
 const correctSpan = document.getElementById('correct-span');
@@ -18,28 +18,34 @@ let correctGuesses = 0;
 let totalGuesses = 0;
 /* Events */
 hobbitButton.addEventListener('click', () => {
-    handleGuess('hobbit', getRandomHidingSpot());
+    handleGuess('hobbit');
+    console.log('hobbitButton');
 });
 
-mountianButton.addEventListener('click', () => {
-    handleGuess('mountian', getRandomHidingSpot());
+mountainButton.addEventListener('click', () => {
+    handleGuess('mountain');
+    console.log('mountainButton');
 });
 
 treesButton.addEventListener('click', () => {
-    handleGuess('trees', getRandomHidingSpot());
+    handleGuess('trees');
+    console.log('treesButton');
 });
 
 /* Display Functions */
 function getRandomHidingSpot() {
-    const hidingPlaces = ['hobbit', 'mountian', 'trees'];
+    const hidingPlaces = ['hobbit', 'mountain', 'trees'];
     const index = Math.floor(Math.random() * hidingPlaces.length);
     return hidingPlaces[index];
 }
 
-function handleGuess(userGuess, correctSpot) {
+function handleGuess(userGuess) {
+    const correctSpot = getRandomHidingSpot();
     hobbitContainer.classList.remove('face');
-    mountianContainer.classList.remove('face');
+    mountainContainer.classList.remove('face');
     treesContainer.classList.remove('face');
+
+    totalGuesses++;
 
     const correctHidingSpot = document.getElementById(`${correctSpot}-container`);
 
@@ -48,7 +54,6 @@ function handleGuess(userGuess, correctSpot) {
     if (userGuess === correctSpot) {
         correctGuesses++;
     }
-    totalGuesses++;
 
     correctSpan.textContent = correctGuesses;
     totalSpan.textContent = totalGuesses;
