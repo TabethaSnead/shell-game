@@ -1,9 +1,9 @@
 /* Imports */
 
 /* Get DOM Elements */
-const hobbitImg = document.getElementById('hobbit-img');
-const mountianImg = document.getElementById('mountian-img');
-const treesImg = document.getElementById('trees-img');
+const hobbitContainer = document.getElementById('hobbit-container');
+const mountianContainer = document.getElementById('mountian-container');
+const treesContainer = document.getElementById('trees-container');
 
 const hobbitButton = document.getElementById('hobbit-button');
 const mountianButton = document.getElementById('mountian-button');
@@ -18,17 +18,40 @@ let correctGuesses = 0;
 let totalGuesses = 0;
 /* Events */
 hobbitButton.addEventListener('click', () => {
-    console.log('hobbit');
+    handleGuess('hobbit', getRandomHidingSpot());
 });
 
 mountianButton.addEventListener('click', () => {
-    console.log('mountian');
+    handleGuess('mountian', getRandomHidingSpot());
 });
 
 treesButton.addEventListener('click', () => {
-    console.log('trees');
+    handleGuess('trees', getRandomHidingSpot());
 });
 
 /* Display Functions */
+function getRandomHidingSpot() {
+    const hidingPlaces = ['hobbit', 'mountian', 'trees'];
+    const index = Math.floor(Math.random() * hidingPlaces.length);
+    return hidingPlaces[index];
+}
 
+function handleGuess(userGuess, correctSpot) {
+    hobbitContainer.classList.remove('face');
+    mountianContainer.classList.remove('face');
+    treesContainer.classList.remove('face');
+
+    const correctHidingSpot = document.getElementById(`${correctSpot}-container`);
+
+    correctHidingSpot.classList.add('face');
+
+    if (userGuess === correctSpot) {
+        correctGuesses++;
+    }
+    totalGuesses++;
+
+    correctSpan.textContent = correctGuesses;
+    totalSpan.textContent = totalGuesses;
+    incorrectSpan.textContent = totalGuesses - correctGuesses;
+}
 // (don't forget to call any display functions you want to run on page load!)
