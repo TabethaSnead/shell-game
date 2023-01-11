@@ -1,39 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-    <!-- metadata -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <!-- title and favicon -->
+        <title>My Hiding Game</title>
+        <link rel="icon" type="image/x-icon" href="assets/alchemy-favicon.png" />
 
-    <!-- title and favicon -->
-    <title>Web App</title>
-    <link rel="icon" type="image/x-icon" href="assets/alchemy-favicon.png" />
+        <!-- js -->
+        <script type="module" src="app.js"></script>
 
-    <!-- js -->
-    <script type="module" src="app.js"></script>
+        <!-- fonts -->
+        <!-- see https://fonts.google.com/ -->
 
-    <!-- fonts -->
-    <!-- see https://fonts.google.com/ -->
+        <!-- css -->
+        <link rel="stylesheet" href="styles/reset.css" />
+        <link rel="stylesheet" href="styles/global.css" />
+        <!-- add link for page specific css -->
+    </head>
 
-    <!-- css -->
-    <link rel="stylesheet" href="styles/reset.css" />
-    <link rel="stylesheet" href="styles/global.css" />
-    <!-- add link for page specific css -->
+    <body>
+        <header>
+            <img class="logo" src="assets/html_css_js.png" alt="logo" />
+            <h1>My Hiding Game</h1>
+        </header>
 
-</head>
+        <main>
+            <section class="image-section">
+                <div id="hobbit-container" class="hiding-places">
+                    <img
+                        src="./assets/hobbit.png"
+                        id="hobbit-img"
+                        class="hiding-spot"
+                        alt="a hobbit home"
+                    />
+                </div>
 
-<body>
-    <header>
-        <img class="logo" src="assets/html_css_js.png" alt="logo">
-        <h1>Web App</h1>
-    </header>
+                <div id="mountain-container" class="hiding-places">
+                    <img
+                        src="./assets/mountain.png"
+                        id="mountain-img"
+                        class="hiding-spot"
+                        alt="a sandstone mountain"
+                    />
+                </div>
 
-    <main>
+                <div id="trees-container" class="hiding-places">
+                    <img
+                        src="./assets/trees.png"
+                        id="trees-img"
+                        class="hiding-spot"
+                        alt="a wooded forest"
+                    />
+                </div>
+            </section>
+            <section class="button-section">
+                <button id="hobbit-button">the bunny is here!</button>
 
-    </main>
+                <button id="mountain-button">the bunny is here!</button>
 
-</body>
-
+                <button id="trees-button">the bunny is here!</button>
+            </section>
+            <section class="result-section">
+                <p>Games Won :<span id="correct-span">0</span></p>
+                <p>Games Lost :<span id="incorrect-span">0</span></p>
+                <p>Total Games Played :<span id="total-span">0</span></p>
+            </section>
+        </main>
+    </body>
 </html>

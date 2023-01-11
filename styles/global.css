@@ -33,3 +33,40 @@ header .logo {
 main {
     padding: 20px;
 }
+
+.image-section {
+    margin: auto;
+    height: 250px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.button-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+img {
+    width: 250px;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+}
+
+.face::after {
+    font-size: 8rem;
+    content: '🐇';
+    position: absolute;
+
+    pointer-events: none;
+}
+
+.hiding-spot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

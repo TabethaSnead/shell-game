@@ -1,3 +1,5 @@
+![wireframe of shell-game](./assets/wireframe.png)
+
 ## The Golden Rule:
 
 🦸 🦸‍♂️ `Stop starting and start finishing.` 🏁
@@ -25,3 +27,17 @@ Additional considerations:
     -   What needs to live in a persistence layer?
 -   Is there some state we need to initialize?
 -   Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be reused?)
+
+\*\*HTML Elements
+
+<h1> title of page
+3 <img> with ids - to show the user the visual choices -classList add and remove
+1 <img> hidden that appears when clicked- to show the user the correct answer after they've chosen-  class that's added using a Math.random array
+3 <button> with id for choice of img during the game- for the user to make their choice - add.EventListener('click')
+3 <p> with ids with 1 <span> with id inside of each one- to display the results of if their choice was correct, incorrect, and the total number of games played display.textcontent of correct, incorrect answers and total games corectAnswer++, totalGames++
+
+\*\*State
+the counter of correct guesses increases
+the counter of incorrect guesses increases
+the counter of total games increases
+the hiding spot string thats chosen from the array at random
